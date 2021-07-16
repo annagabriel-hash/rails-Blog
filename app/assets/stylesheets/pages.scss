@@ -12,7 +12,6 @@
 	background-image: asset-url('writing.jpg'); // returns url(/assets/writing.png)
 	background-size: cover;
 	background-position: bottom;
-	height: 65vh;
 }
 #copyright {
 	&:hover,
