@@ -1,0 +1,22 @@
+<% if article.errors.any? %>
+  <h2>The following errors prevented the form from submitting: </h2>
+  <ul>
+    <% article.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model: article do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :body %>
+    <%= form.text_field :body %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
