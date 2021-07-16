@@ -1,0 +1,35 @@
+
+/*********************************** 
+  || Table of Contents          ||
+  ||  A. Global Styles          ||      
+  ||  B. Content                ||   
+  ||  C. Color Styles           ||    
+  ||  D. Components             ||  
+  ||  E. Layout/Utilities       ||  
+***********************************/
+/* =====================
+    A. GLOBAL STYLES
+  ====================== 
+*/
+
+html,
+body {
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+}
+a {
+  text-decoration: none;
+}
+/* =====================
+    E. UTILITIES
+  ====================== 
+*/
+/* || Background */
+.bg-light-grey {
+	background-color: lightgrey;
+}
+/* || Text */
+.text-shadow {
+	text-shadow: black 1px 0 10px;
+}
