@@ -1,3 +1,22 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+/* =====================
+    SITE SECTION
+  ====================== 
+*/
+/* || NAVIGATION BAR */
+
+#logo {
+	letter-spacing: -1px;
+}
+
+#homepage {
+	background-image: asset-url('writing.jpg'); // returns url(/assets/writing.png)
+	background-size: cover;
+	background-position: bottom;
+	height: 65vh;
+}
+#copyright {
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
