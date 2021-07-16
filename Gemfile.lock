@@ -66,7 +66,7 @@ GEM
     autoprefixer-rails (10.2.5.1)
       execjs (> 0)
     backport (1.2.0)
-    benchmark (0.1.0)
+    benchmark (0.1.1)
     bindex (0.8.1)
     bootsnap (1.7.5)
       msgpack (~> 1.0)
@@ -173,7 +173,7 @@ GEM
     regexp_parser (2.1.1)
     reverse_markdown (2.0.0)
       nokogiri
-    rexml (3.2.3.1)
+    rexml (3.2.5)
     rubocop (1.18.3)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
