@@ -15,7 +15,7 @@
       <% @articles.each do |article| %>
       <tr>
         <td><%=article.name %></td>
-        <td><%=article.body %></td>
+        <td><%= truncate(article.body, length: 50) %></td>
         <td class='text-center'><%= link_to 'Show', article, class: 'btn btn-primary btn-sm' %></td>
         <td class='text-center'><%= link_to 'Edit', edit_article_path(article), class: 'btn btn-primary btn-sm' %></td>
         <td class='text-center'><%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-primary btn-sm' %></td>
