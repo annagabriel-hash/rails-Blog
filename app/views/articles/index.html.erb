@@ -1,23 +1,26 @@
-<h1>Articles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <td>Title</td>
-      <td>Body</td>
-      <td colspan='3'>Action</td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @articles.each do |article| %>
-    <tr>
-      <td> <%=article.name %> </td>
-      <td> <%=article.body %> </td>
-      <td><%= link_to 'Show', article %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?'} %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'New Article', new_article_path%>
+<section class='p-3' id='articles-list'>
+  <div class='d-flex'>
+    <h1>Articles</h1>
+    <%= link_to 'New Article', new_article_path, class: 'btn btn-primary' %>
+  </div>
+  <table class='table table-hover'>
+    <thead>
+      <tr class='table-primary'>
+        <th>Title</th>
+        <th>Body</th>
+        <th colspan='3' class='text-center'>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @articles.each do |article| %>
+      <tr>
+        <td><%=article.name %></td>
+        <td><%=article.body %></td>
+        <td class='text-center'><%= link_to 'Show', article, class: 'btn btn-primary btn-sm' %></td>
+        <td class='text-center'><%= link_to 'Edit', edit_article_path(article), class: 'btn btn-primary btn-sm' %></td>
+        <td class='text-center'><%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-primary btn-sm' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
