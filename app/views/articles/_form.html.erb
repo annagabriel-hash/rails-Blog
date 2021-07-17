@@ -1,22 +1,26 @@
 <% if article.errors.any? %>
-  <h2>The following errors prevented the form from submitting: </h2>
-  <ul>
-    <% article.errors.each do |error| %>
-        <li><%= error.full_message %></li>
-    <% end %>
-  </ul>
+  <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+    <h2>The following errors prevented the form from submitting: </h2>
+    <ul>
+      <% article.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
 <% end %>
 
-<%= form_with model: article do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+<%= form_with model: article, id: 'article-form', class: 'align-items-start' do |form| %>
+  <div class='mb-3'>
+    <%= form.label :name, class: 'form-label' %>
+    <%= form.text_field :name, class: 'form-control' %>
   </div>
-  <div>
-    <%= form.label :body %>
-    <%= form.text_field :body %>
+  <div class='mb-3'>
+    <%= form.label :body, class: 'form-label' %>
+    <%= form.text_area :body, class: 'form-control' %>
   </div>
-  <div>
-    <%= form.submit %>
+  <div class='mt-5'>
+    <%= link_to 'Back', articles_path, class: 'btn btn-danger col-3' %>
+    <%= form.submit class: 'btn btn-primary col-3 me-3' %>
   </div>
 <% end %>
