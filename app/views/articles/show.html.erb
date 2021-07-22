@@ -1,4 +1,10 @@
-<h1><%= @article.name %></h1>
-<p><%= @article.body %></p>
-<%= link_to 'Edit', edit_article_path(@article) %>
-<%= link_to 'Back', articles_path %>
+<section class='container-fluid'>
+  <h1 class='py-3'><%= @article.name %></h1>
+  <div class='flex-grow-1'>
+    <p><%= simple_format(@article.body) %></p>
+  </div>
+  <div class='py-3'>
+    <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary col-3 me-3' %>
+    <%= link_to 'Back', articles_path, class: 'btn btn-warning col-3' %>
+  </div>
+</section>
