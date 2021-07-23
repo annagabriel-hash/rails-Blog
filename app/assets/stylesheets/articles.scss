@@ -2,14 +2,6 @@
     SITE SECTION
   ====================== 
 */
-#articles-list {
-  th {
-    border-bottom: none;
-    &:last-child {
-      width: 15%;
-    }
-  }
-}
 
 #article-form {
   textarea {
@@ -17,7 +9,6 @@
   }
 }
 #article-title {
-  background-image: url("https://source.unsplash.com/gZB-i-dA6ns");
   height: 50vh;
   background-position: center;
   background-size: cover;

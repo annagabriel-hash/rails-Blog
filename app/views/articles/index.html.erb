@@ -1,30 +1,26 @@
+<nav class="bg-dark navbar navbar-dark navbar-expand-lg sticky-top w-100">
+  <%= render 'shared/navigation' %>
+</nav>
 <section class='p-3' id='articles-list'>
   <div class='d-flex'>
     <h1>Articles</h1>
     <%= link_to 'New Article', new_article_path, class: 'align-self-center btn btn-primary ms-5 px-5 py-2 rounded-pill shadow' %>
   </div>
-  <table class='table table-hover mt-4'>
-    <thead>
-      <tr class='table-primary'>
-        <th>Title</th>
-        <th>Body</th>
-        <th colspan='3' class='text-center'>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @articles.each do |article| %>
-      <tr>
-        <td>
-          <%= link_to article.name, article, class: 'text-dark' %>
-        </td>
-        <td>
-          <%= link_to truncate(article.body, length: 50), article, class: 'text-dark' %>
-        </td>
-        <td class='text-center'><%= link_to 'Show', article, class: 'btn btn-primary btn-sm' %></td>
-        <td class='text-center'><%= link_to 'Edit', edit_article_path(article), class: 'btn btn-primary btn-sm' %></td>
-        <td class='text-center'><%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-primary btn-sm' %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-</section>
+  <div class="card-group">
+    <% @articles.each do |article| %>
+      <div class="card m-2 border flex-wrap">
+        <%= image_tag article.image_url, class: 'card-img-top' %>
+        <div class="card-body">
+          <h5 class="card-title"><%= article.name %></h5>
+          <p class="card-text"><%= truncate(article.body, length: 200) %> </p>
+          <div class='card-text'>
+            <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-primary btn-sm col-5' %>
+            <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger btn-sm col-5' %>
+          </div>
+        </div>
+        <div class="card-footer bg-white border-top-0">
+          <small class="text-muted">Last updated <%= time_ago_in_words(article.updated_at) %></small>
+        </div>
+      </div>
+    <% end %>
+  </div>
