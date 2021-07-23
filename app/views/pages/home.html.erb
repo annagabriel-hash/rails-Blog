@@ -8,19 +8,15 @@
     <button type="button" data-bs-target="#homepage" data-bs-slide-to="2"></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-			<img src="https://source.unsplash.com/WLUHO9A_xik", class='d-block w-100 h-auto'>
+    <% @articles.each.with_index do |article, i| %>
+    <div class="carousel-item <%= 'active' if i == 0 %>">
+      <%= image_tag article.image_url, class: 'd-block w-100 h-auto' %>
       <div class="carousel-caption d-block">
-        <h3 class='fs-1'>Article one</h3>
-        <a href="#" class='btn btn-outline-light'>Read more</a>
+        <h3 class='fs-1'><%= article.name %></h3>
+        <%= link_to 'Read more', article, class: 'btn btn-outline-light'%>
       </div>
     </div>
-    <div class="carousel-item">
-			<img src="https://source.unsplash.com/hopX_jpVtRM", class='d-block w-100 h-auto' id='test'>
-    </div>
-    <div class="carousel-item">
-			<img src="https://source.unsplash.com/WLUHO9A_xik", class='d-block w-100 h-auto'>
-    </div>
+    <% end %>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#homepage" data-bs-slide="prev">
     <span class="carousel-control-prev-icon"></span>

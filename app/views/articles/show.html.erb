@@ -1,8 +1,8 @@
-<nav class="bg-dark navbar navbar-dark navbar-expand-lg w-100">
+<nav class="bg-dark navbar navbar-dark navbar-expand-lg sticky-top w-100">
   <%= render 'shared/navigation' %>
 </nav>
 <article class='container-fluid p-0 min-h-25'>
-  <header id='article-title' class='align-items-center d-flex flex-column justify-content-center'>
+  <header id='article-title' class='align-items-center d-flex flex-column justify-content-center' style= "background-image: url(<%= @article.image_url%>)">
     <span class="badge rounded-pill bg-light text-dark px-4 py-2">Productivity</span>
     <h1 class='fw-bolder text-white text-center text-shadow my-3'><%= @article.name %></h1>
     <p class='text-white text-shadow text-uppercase fspace-1'>James Clear</p>
