@@ -1,4 +1,3 @@
-
 /*********************************** 
   || Table of Contents          ||
   ||  A. Global Styles          ||      
@@ -12,17 +11,15 @@
   ====================== 
 */
 @import 'bootstrap/dist/css/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
 html,
 body {
-  font-family: 'Lato', sans-serif;
-  max-width: 100%;
+	max-width: 100%;
 	position: absolute;
-  width: 100vw;
+	width: 100vw;
 }
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 /* =====================
     E. UTILITIES
@@ -33,12 +30,12 @@ a {
 	background-color: lightgrey;
 }
 .opacity-50 {
-  opacity: 0.5;
+	opacity: 0.5;
 }
 /* || Text */
 .text-shadow {
 	text-shadow: black 1px 0 10px;
 }
 .fspace-1 {
-  letter-spacing: 1px;
+	letter-spacing: 1px;
 }
