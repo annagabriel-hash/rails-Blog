@@ -12,8 +12,8 @@
     <div class="carousel-item <%= 'active' if i == 0 %>">
       <%= image_tag article.image_url, class: 'd-block w-100 h-auto' %>
       <div class="carousel-caption d-block">
-        <h3 class='fs-1'><%= article.name %></h3>
-        <%= link_to 'Read more', article, class: 'btn btn-outline-light'%>
+        <h3 class='fs-1 text-shadow'><%= article.name %></h3>
+        <%= link_to 'Read more', article, class: 'btn btn-light'%>
       </div>
     </div>
     <% end %>
