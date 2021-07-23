@@ -16,3 +16,14 @@
     height: 30vh;
   }
 }
+#article-title {
+  background-image: url("https://source.unsplash.com/gZB-i-dA6ns");
+  height: 50vh;
+  background-position: center;
+  background-size: cover;
+}
+#commentsForm {
+  textarea {
+    height: 150px;
+  }
+}
