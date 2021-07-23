@@ -3,19 +3,18 @@
   ====================== 
 */
 /* || NAVIGATION BAR */
-
+.navbar {
+	z-index: 10;
+}
 #logo {
 	letter-spacing: -1px;
 }
 
 #homepage {
-	background-image: asset-url('writing.jpg'); // returns url(/assets/writing.png)
-	background-size: cover;
-	background-position: bottom;
-}
-#copyright {
-	&:hover,
-	&:focus {
-		text-decoration: underline;
+	.carousel-item {
+		img {
+			max-height: 100vh;	
+			max-width: 100vw;	
+		}
 	}
 }
