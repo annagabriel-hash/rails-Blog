@@ -5,7 +5,9 @@
 /* || NAVIGATION BAR */
 .navbar {
 	z-index: 10;
-	opacity: 0.5;
+	.nav-item {
+		letter-spacing: 0.5px;
+	}
 }
 #logo {
 	letter-spacing: -1px;
