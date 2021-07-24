@@ -1,4 +1,7 @@
-<section class='container-fluid px-5'>
+<nav class="bg-dark navbar navbar-dark navbar-expand-lg sticky-top w-100">
+  <%= render 'shared/navigation' %>
+</nav>
+<section class='container-fluid px-5 mt-5'>
   <h1>Create new article</h1>
   <%= render 'form', article: @article %>
 </section>
