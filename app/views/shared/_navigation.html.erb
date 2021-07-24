@@ -1,5 +1,5 @@
 <div class="container-fluid position-relative">
-	<a class="navbar-brand" href="#">Navbar</a>
+	<%= link_to 'Blog', root_path, class: 'navbar-brand' %>
 	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -10,17 +10,17 @@
 			<li class="nav-item"><a class="nav-link text-uppercase text-white" href="#">Coding</a></li>
 		</ul>
 		<div>
-			<div class="dropdown d-none">
+			<div class="dropdown">
 				<a class="btn btn-outline-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" data-bs-display="static">
 					anna_gabriel 
 				</a>
-				<ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end">
+				<ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end d-none">
 					<li><%= link_to 'Create Article', new_article_path, class: 'dropdown-item'%></li>
 					<li><%= link_to 'View Articles', articles_path, class: 'dropdown-item'%></li>
 					<li><%= link_to 'Logout', articles_path, class: 'dropdown-item'%></li>
 				</ul>
 			</div>
-			<button class='btn btn-outline-light'>Login / Signup</button>
+			<button class='btn btn-outline-light d-none'>Login / Signup</button>
 		</div>
 	</div>
 </div>
