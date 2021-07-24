@@ -16,6 +16,8 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    # Temporary assign a user to prevent error
+    @article.user = User.find(2)
     if @article.save
       redirect_to @article, notice: 'Article was created successfully'
     else
