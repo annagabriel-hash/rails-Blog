@@ -2,7 +2,7 @@ require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
   setup do
-    @user = User.new(username: 'johndoe', first_name: 'John', last_name: 'Doe', email: 'johndoe@example.com')
+    @user = User.new(username: 'johndoe', first_name: 'John', last_name: 'Doe', email: 'johndoe@example.com', password: 'password', password_confirmation: 'password')
   end
 
   test 'user is valid' do
@@ -48,6 +48,17 @@ class UserTest < ActiveSupport::TestCase
     duplicate_user = User.new(username: 'janedoe', first_name: 'Jane', last_name: 'Doe', email: 'janedoe@example.com')
     duplicate_user.email = @user.email.upcase
     assert_not duplicate_user.valid?
+  end
+
+  test 'should not save user without password' do
+    @user.password = @user.password_confirmation = " " * 6
+    assert_not @user.valid?, 'Saved user without password'
+  end
+
+  test 'should not save password if password confirmation does not match' do
+    @user.password_digest = ''
+    @user.password_confirmation = 'no match'
+    assert_not @user.valid?, 'Saved user with password confirmation not matching'
   end
 
 end
