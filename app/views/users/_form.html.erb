@@ -1,0 +1,42 @@
+<% if user.errors.any? %>
+  <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+    <h2 class='alert-heading'><%= pluralize(user.errors.count, 'error') %> prohibited this user from being saved:</h2>
+    <ul>
+      <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
+
+<%= form_with model: user, id: 'user-form', class: 'mb-3' do |form| %>
+  <div class='mb-3'>
+    <%= form.label :username, class: 'form-label'%>
+    <%= form.text_field :username, class: 'form-control', placeholder: 'Enter username' %>
+  </div>
+  <div class='mb-3'>
+    <%= form.label :first_name, class: 'form-label' %>
+    <%= form.text_field :first_name, class: 'form-control', placeholder: 'Enter firstname' %>
+  </div>
+  <div class='mb-3'>
+    <%= form.label :last_name, class: 'form-label' %>
+    <%= form.text_field :last_name, class: 'form-control', placeholder: 'Enter lastname'%>
+  </div>
+  <div class='mb-3'>
+    <%= form.label :email, class: 'form-label' %>
+    <%= form.text_field :email, class: 'form-control', placeholder: 'Enter email'%>
+  </div>
+  <div class='mb-3'>
+    <%= form.label :password, class: 'form-label' %>
+    <%= form.password_field :password, class: 'form-control', placeholder: 'Enter password'%>
+  </div>
+  <div class='mb-3'>
+    <%= form.label :password_confirmation, class: 'form-label' %>
+    <%= form.password_field :password_confirmation, class: 'form-control', placeholder: 'Reenter password'%>
+  </div>
+  <div class='mt-5 row flex-nowrap px-2'>
+    <%= link_to 'Back', root_path, class: 'btn btn-danger flex-shrink-1 me-2' %>
+    <%= form.submit class: 'btn btn-primary flex-shrink-1' %>
+  </div>
+<% end %>

@@ -9,7 +9,9 @@
   <div class="card-group">
     <% @articles.each do |article| %>
       <div class="card m-2 border flex-wrap">
-        <%= image_tag article.image_url, class: 'card-img-top' %>
+        <% if article.image_url %>
+          <%= image_tag article.image_url, class: 'card-img-top' %>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= article.name %></h5>
           <p class="card-text"><%= truncate(article.body, length: 200) %> </p>
