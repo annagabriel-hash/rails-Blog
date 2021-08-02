@@ -15,6 +15,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       post users_url, params: { user: { username: @user.username, first_name: @user.first_name, last_name: @user.last_name, email: @user.email, password: @user.password, password_confirmation: @user.password_confirmation} }
     end
     assert_redirected_to articles_path
+    assert_equal "Welcome #{@user.first_name}, you have successfully signed up", flash[:notice]
   end
 
 end
